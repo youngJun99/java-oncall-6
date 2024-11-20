@@ -3,7 +3,6 @@ package oncall.domain;
 import oncall.constants.Errors;
 import oncall.vo.MyMonth;
 import oncall.vo.MyMonthDay;
-import org.assertj.core.util.diff.myers.MyersDiff;
 
 import java.time.MonthDay;
 import java.util.List;
