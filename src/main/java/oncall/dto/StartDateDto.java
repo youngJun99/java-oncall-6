@@ -1,6 +1,6 @@
 package oncall.dto;
 
-public record DateDto(
+public record StartDateDto(
         int month,
         String koreanWeekDay
 ) {

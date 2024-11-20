@@ -1,6 +1,6 @@
 package oncall.handler;
 
-import oncall.dto.DateDto;
+import oncall.dto.StartDateDto;
 import oncall.view.InputView;
 
 import java.util.ArrayList;
@@ -17,13 +17,13 @@ public class InputHandler {
         this.inputValidator = inputValidator;
     }
 
-    public DateDto getDateInfo() {
+    public StartDateDto getDateInfo() {
         String dateInfo = inputView.getInputDate();
         inputValidator.validateDateInfo(dateInfo);
         Matcher matcher = inputValidator.getDateInfoPattern().matcher(dateInfo);
         int month = Integer.parseInt(matcher.group(1));
         String koreanWeekDay = matcher.group(2);
-        return new DateDto(month, koreanWeekDay);
+        return new StartDateDto(month, koreanWeekDay);
     }
 
     public List<String> getWeekDayWorkSchedule() {
