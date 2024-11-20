@@ -3,6 +3,7 @@ package oncall.handler;
 import oncall.constants.Errors;
 
 import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class InputValidatorImpl implements InputValidator {
 
@@ -19,16 +20,18 @@ public class InputValidatorImpl implements InputValidator {
 
     @Override
     public void validateWorkSchedule(String string) {
-
+        if (!string.matches(WORKER_SCHEDULE_REGEX)) {
+            throw new IllegalArgumentException(Errors.NOT_VALID_WORKERS_INPUT.getMessage());
+        }
     }
 
     @Override
-    public Matcher getDateInfoMatcher() {
-        return null;
+    public Pattern getDateInfoPattern() {
+        return Pattern.compile(DATE_INFO_REGEX);
     }
 
     @Override
-    public Matcher getWorkScheduleMatcher() {
-        return null;
+    public Pattern getWorkSchedulePattern() {
+        return Pattern.compile(WORKER_SCHEDULE_REGEX);
     }
 }

@@ -1,6 +1,7 @@
 package oncall.handler;
 
 import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public interface InputValidator {
 
@@ -8,7 +9,7 @@ public interface InputValidator {
 
     void validateWorkSchedule(String string);
 
-    Matcher getDateInfoMatcher();
+    Pattern getDateInfoPattern();
 
-    Matcher getWorkScheduleMatcher();
+    Pattern getWorkSchedulePattern();
 }
