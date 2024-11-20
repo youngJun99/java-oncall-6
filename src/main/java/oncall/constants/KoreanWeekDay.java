@@ -1,4 +1,4 @@
-package oncall.domain;
+package oncall.constants;
 
 import java.time.DayOfWeek;
 
