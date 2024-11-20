@@ -32,7 +32,7 @@ public class InputHandler {
     }
 
     public List<String> getWeekEndsWorkSchedule() {
-        String schedule = inputView.getWeekEndWorkSchedule();
+        String schedule = inputView.getRestDayWorkSchedule();
         return makeScheduleList(schedule);
     }
 
