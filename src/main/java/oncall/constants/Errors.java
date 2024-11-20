@@ -2,6 +2,8 @@ package oncall.constants;
 
 public enum Errors {
 
+    MONTH_NOT_VALID("월을 잘못 입력했습니다"),
+
     DATE_NOT_VALID("존재할 수 없는 날짜입니다.");
 
 
