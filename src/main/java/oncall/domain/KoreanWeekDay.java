@@ -46,6 +46,11 @@ public enum KoreanWeekDay {
                 .orElseThrow(() -> new IllegalArgumentException(Errors.SYSTEM_ERROR.getMessage()));
     }
 
+    public static boolean isWeekEnd(int day) {
+        int index = processDayToIndex(day);
+        return day == 7 || day == 6;
+    }
+
     private static int processDayToIndex(int day) {
         if (day % 7 == 0) {
             return 7;
