@@ -22,8 +22,8 @@ public class InputHandler {
         inputValidator.validateDateInfo(dateInfo);
         Matcher matcher = inputValidator.getDateInfoPattern().matcher(dateInfo);
         int month = Integer.parseInt(matcher.group(1));
-        int monthDay = Integer.parseInt(matcher.group(2));
-        return new DateDto(month, monthDay);
+        String koreanWeekDay = matcher.group(2);
+        return new DateDto(month, koreanWeekDay);
     }
 
     public List<String> getWeekDayWorkSchedule() {
