@@ -21,6 +21,14 @@ public enum KoreanWeekDay {
         this.name = name;
     }
 
+    public int getDayIndex() {
+        return dayIndex;
+    }
+
+    public String getName() {
+        return name;
+    }
+
     public int getIndexOf(String input) {
         return Arrays.stream(KoreanWeekDay.values())
                 .filter(weekday -> weekday.name.equals(input))
