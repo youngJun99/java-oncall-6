@@ -16,14 +16,13 @@ import static oncall.utils.ErrorCatcher.retryHandler;
 public class DateCalenderService {
 
     private final InputHandler inputHandler;
-    private MyDate myDate;
 
     public DateCalenderService(InputHandler inputHandler) {
         this.inputHandler = inputHandler;
     }
 
     public List<WorkDateDto> getWorkDateCalender() {
-        myDate = retryHandler(this::InitializeMyDate);
+        MyDate myDate = retryHandler(this::InitializeMyDate);
         return myDate.getWorkDateCalender();
     }
 
