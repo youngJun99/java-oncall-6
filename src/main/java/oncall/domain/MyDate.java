@@ -3,9 +3,11 @@ package oncall.domain;
 import oncall.constants.Errors;
 import oncall.domain.vo.MyMonth;
 import oncall.domain.vo.MyMonthDay;
+import oncall.dto.MyDateDto;
 
 import java.time.MonthDay;
 import java.util.List;
+import java.util.stream.IntStream;
 
 import static oncall.utils.ErrorCatcher.tryMethodAndThrow;
 
@@ -40,5 +42,10 @@ public class MyDate {
         return new MyMonthDay(30);
     }
 
+    public List<MyDateDto> getWorkDates() {
+        return IntStream.rangeClosed(monthDay.getMonthDay(), endDayOfMonth.getMonthDay())
+                .mapToObj(day -> new MyDateDto(month.getMonth(), day))
+                .toList();
+    }
 }
 
