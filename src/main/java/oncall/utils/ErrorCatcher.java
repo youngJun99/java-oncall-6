@@ -15,7 +15,7 @@ public class ErrorCatcher {
         }
     }
 
-    public static <T> T retryMethod(Supplier<T> method) {
+    public static <T> T retryHandler(Supplier<T> method) {
         int retry = 0;
         while (retry < RETRY_LIMIT) {
             retry++;
