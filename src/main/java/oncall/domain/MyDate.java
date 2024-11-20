@@ -2,7 +2,6 @@ package oncall.domain;
 
 import oncall.constants.Errors;
 import oncall.domain.vo.MyMonth;
-import oncall.domain.vo.MyMonthDay;
 import oncall.dto.DateDto;
 
 import java.time.MonthDay;
@@ -14,8 +13,7 @@ import static oncall.utils.ErrorCatcher.tryMethodAndThrow;
 public class MyDate {
 
     private final MyMonth month;
-    private final MyMonthDay monthDay;
-    private final MyMonthDay endDayOfMonth;
+    private final int endDayOfMonth;
 
     public MyDate(MyMonth month, MyMonthDay monthDay) {
         validateDate(month.getMonth(), monthDay.getMonthDay());
