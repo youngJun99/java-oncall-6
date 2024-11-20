@@ -9,7 +9,11 @@ public enum Errors {
     MONTH_OUT_OF_RANGE("월의 입력범위 오류"),
     MONTH_DAY_OUT_OF_RANGE("일자 입력 범위 오류"),
     DATE_NOT_VALID("존재할 수 없는 날짜입니다"),
-    WEEK_DAY_NOT_VALID("요일을 올바르게 입력하지 않았습니다");
+    WEEK_DAY_NOT_VALID("요일을 올바르게 입력하지 않았습니다"),
+
+    //이름 관련 에러
+    NAME_RANGE_ERROR("이름이 5글자 이상입니다.");
+
 
 
     private static final String PREFIX = "[ERROR] ";
