@@ -21,7 +21,7 @@ public class InputValidatorImpl implements InputValidator {
     @Override
     public void validateWorkSchedule(String string) {
         if (!string.matches(WORKER_SCHEDULE_REGEX)) {
-            throw new IllegalArgumentException(Errors.NOT_VALID_WORKERS_INPUT.getMessage());
+            throw new IllegalArgumentException(Errors.NOT_VALID_DATE_INPUT.getMessage());
         }
     }
 
