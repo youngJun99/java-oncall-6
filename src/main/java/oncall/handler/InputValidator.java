@@ -1,4 +1,5 @@
 package oncall.handler;
 
-public class InputValidator {
+public interface InputValidator {
+
 }
