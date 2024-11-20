@@ -26,12 +26,12 @@ public class InputHandler {
         return new StartDateDto(month, koreanWeekDay);
     }
 
-    public List<String> getWeekDayWorkSchedule() {
+    public List<String> getWorkDayWorkSchedule() {
         String schedule = inputView.getWeekDayWorkSchedule();
         return makeScheduleList(schedule);
     }
 
-    public List<String> getWeekEndsWorkSchedule() {
+    public List<String> getRestDayWorkSchedule() {
         String schedule = inputView.getRestDayWorkSchedule();
         return makeScheduleList(schedule);
     }
