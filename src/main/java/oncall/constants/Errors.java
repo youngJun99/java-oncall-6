@@ -15,7 +15,7 @@ public enum Errors {
         this.message = message;
     }
 
-    public String getMeesage() {
+    public String getMessage() {
         return PREFIX+message;
     }
 }
