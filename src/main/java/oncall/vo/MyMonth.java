@@ -4,7 +4,7 @@ import oncall.constants.Errors;
 
 public class MyMonth {
 
-    private final int month;
+    private int month;
 
     public MyMonth(int month) {
         validateMyMonth(month);
