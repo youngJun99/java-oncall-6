@@ -1,4 +1,4 @@
-package oncall.constants;
+package oncall.domain;
 
 import java.time.DayOfWeek;
 
@@ -17,5 +17,13 @@ public enum KoreanWeekDay {
     KoreanWeekDay(DayOfWeek dayOfWeek,String name) {
         this.dayOfWeek = dayOfWeek;
         this.name = name;
+    }
+
+    public DayOfWeek getDayOfWeek() {
+        return dayOfWeek;
+    }
+
+    public String getName() {
+        return name;
     }
 }
