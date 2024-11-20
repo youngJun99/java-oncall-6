@@ -13,6 +13,10 @@ public class Worker {
         this.name = name;
     }
 
+    public String getName() {
+        return name;
+    }
+
     private void validateName(String inputName) {
         if (inputName.length() > 5) {
             throw new IllegalArgumentException(Errors.NAME_RANGE.getMessage());
