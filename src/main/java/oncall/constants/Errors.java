@@ -5,6 +5,9 @@ public enum Errors {
     //시스템 에러
     SYSTEM_ERROR("시스템 구조 에러"),
 
+    //입력 횟수 관련 에러
+    OVER_MAX_RETRIES("재시도 횟수를 초과했습니다"),
+
     //날짜 입력관련 에러
     MONTH_OUT_OF_RANGE("월의 입력범위 오류"),
     WEEK_DAY_NOT_VALID("요일을 올바르게 입력하지 않았습니다"),
