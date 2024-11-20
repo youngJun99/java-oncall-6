@@ -1,8 +1,8 @@
 package oncall.domain;
 
 import oncall.constants.Errors;
-import oncall.vo.MyMonth;
-import oncall.vo.MyMonthDay;
+import oncall.domain.vo.MyMonth;
+import oncall.domain.vo.MyMonthDay;
 
 import java.time.MonthDay;
 import java.util.List;

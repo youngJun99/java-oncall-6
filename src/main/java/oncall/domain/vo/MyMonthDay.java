@@ -1,4 +1,4 @@
-package oncall.vo;
+package oncall.domain.vo;
 
 import oncall.constants.Errors;
 
