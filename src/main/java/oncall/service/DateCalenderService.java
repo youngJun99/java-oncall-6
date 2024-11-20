@@ -1,7 +1,5 @@
 package oncall.service;
 
-import oncall.domain.Holiday;
-import oncall.domain.KoreanWeekDay;
 import oncall.domain.MyDate;
 import oncall.domain.vo.MyMonth;
 import oncall.dto.StartDateDto;
@@ -27,7 +25,7 @@ public class DateCalenderService {
         return myDate.getWorkDateCalender();
     }
 
-    private MyDate InitializeMyDate() {
+    private void InitializeMyDate() {
         StartDateDto startDate = inputHandler.getDateInfo();
         MyMonth startMonth = new MyMonth(startDate.month());
         int startWeekDayIndex = getIndexOf(startDate.koreanWeekDay());
