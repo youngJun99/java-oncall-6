@@ -1,13 +1,12 @@
 package oncall.domain.vo;
 
-import jdk.jshell.ErroneousSnippet;
 import oncall.constants.Errors;
 
-public class Name {
+public class Worker {
 
     private final String name;
 
-    public Name(String name) {
+    public Worker(String name) {
         validateName(name);
         this.name = name;
     }
