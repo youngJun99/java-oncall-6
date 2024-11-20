@@ -8,5 +8,7 @@ public interface InputValidator {
 
     void validateWorkSchedule(String string);
 
-    Matcher getMatcher();
+    Matcher getDateInfoMatcher();
+
+    Matcher getWorkScheduleMatcher();
 }
