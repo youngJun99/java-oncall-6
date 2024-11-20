@@ -20,7 +20,7 @@ public enum Holiday {
         this.monthDay = monthDay;
     }
 
-    public boolean isHoliday(int inputMonth, int inputMonthDay) {
+    public static boolean isHoliday(int inputMonth, int inputMonthDay) {
         return Arrays.stream(Holiday.values())
                 .anyMatch(holiday -> holiday.month == inputMonth && holiday.monthDay == inputMonthDay);
     }
