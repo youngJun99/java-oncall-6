@@ -16,13 +16,14 @@ import static oncall.utils.ErrorCatcher.retryHandler;
 public class DateCalenderService {
 
     private final InputHandler inputHandler;
+    private MyDate myDate;
 
     public DateCalenderService(InputHandler inputHandler) {
         this.inputHandler = inputHandler;
     }
 
     public List<WorkDateDto> getWorkDateCalender() {
-        MyDate myDate = retryHandler(this::InitializeMyDate);
+        retryHandler(this::InitializeMyDate);
         return myDate.getWorkDateCalender();
     }
 
@@ -30,6 +31,6 @@ public class DateCalenderService {
         StartDateDto startDate = inputHandler.getDateInfo();
         MyMonth startMonth = new MyMonth(startDate.month());
         int startWeekDayIndex = getIndexOf(startDate.koreanWeekDay());
-        return new MyDate(startMonth,startWeekDayIndex);
+        myDate =  new MyDate(startMonth,startWeekDayIndex);
     }
 }

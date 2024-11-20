@@ -15,18 +15,18 @@ public class ErrorCatcher {
         }
     }
 
-    public static <T> T retryHandler(Supplier<T> method) {
+    public static void retryHandler(Runnable method) {
         int retry = 0;
         while (retry < RETRY_LIMIT) {
             retry++;
             try {
-                return method.get();
+                method.run();
+                return;
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
         }
         System.err.println(Errors.OVER_MAX_RETRIES.getMessage());
         System.exit(1);
-        return null;
     }
 }
