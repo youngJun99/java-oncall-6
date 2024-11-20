@@ -1,6 +1,6 @@
 package oncall.dto;
 
-public record MyDateDto(
+public record DateDto(
         int month,
         int monthDay
 ) {

@@ -3,7 +3,7 @@ package oncall.domain;
 import oncall.constants.Errors;
 import oncall.domain.vo.MyMonth;
 import oncall.domain.vo.MyMonthDay;
-import oncall.dto.MyDateDto;
+import oncall.dto.DateDto;
 
 import java.time.MonthDay;
 import java.util.List;
@@ -42,9 +42,9 @@ public class MyDate {
         return new MyMonthDay(30);
     }
 
-    public List<MyDateDto> getWorkDates() {
+    public List<DateDto> getWorkDates() {
         return IntStream.rangeClosed(monthDay.getMonthDay(), endDayOfMonth.getMonthDay())
-                .mapToObj(day -> new MyDateDto(month.getMonth(), day))
+                .mapToObj(day -> new DateDto(month.getMonth(), day))
                 .toList();
     }
 }

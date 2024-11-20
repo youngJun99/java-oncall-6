@@ -1,7 +1,6 @@
 package oncall.handler;
 
-import oncall.domain.vo.Worker;
-import oncall.dto.DateInputDto;
+import oncall.dto.DateDto;
 import oncall.view.InputView;
 
 import java.util.ArrayList;
@@ -18,13 +17,13 @@ public class InputHandler {
         this.inputValidator = inputValidator;
     }
 
-    public DateInputDto getDateInfo() {
+    public DateDto getDateInfo() {
         String dateInfo = inputView.getInputDate();
         inputValidator.validateDateInfo(dateInfo);
         Matcher matcher = inputValidator.getDateInfoPattern().matcher(dateInfo);
         int month = Integer.parseInt(matcher.group(1));
         int monthDay = Integer.parseInt(matcher.group(2));
-        return new DateInputDto(month, monthDay);
+        return new DateDto(month, monthDay);
     }
 
     public List<String> getWeekDayWorkSchedule() {
