@@ -16,10 +16,10 @@ public class MyDate {
     private int weekDayIndex;
     private final int endDayOfMonth;
 
-    public MyDate(MyMonth month, int endDayOfMonth, int weekDayIndex) {
+    public MyDate(MyMonth month, int weekDayIndex) {
         this.month = month;
-        this.endDayOfMonth = endDayOfMonth;
         this.weekDayIndex = weekDayIndex;
+        this.endDayOfMonth = findEndDayOfMonth(month.getMonth());
     }
 
     private int findEndDayOfMonth(int month) {
