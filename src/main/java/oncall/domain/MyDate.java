@@ -1,49 +1,49 @@
 package oncall.domain;
 
-import oncall.constants.Errors;
 import oncall.domain.vo.MyMonth;
-import oncall.dto.DateDto;
+import oncall.dto.WorkDateDto;
 
-import java.time.MonthDay;
 import java.util.List;
 import java.util.stream.IntStream;
 
-import static oncall.utils.ErrorCatcher.tryMethodAndThrow;
+import static oncall.domain.Holiday.isHoliday;
+import static oncall.domain.KoreanWeekDay.getNameOf;
+import static oncall.domain.KoreanWeekDay.isWeekEnd;
 
 public class MyDate {
 
     private final MyMonth month;
+    private int weekDayIndex;
     private final int endDayOfMonth;
 
-    public MyDate(MyMonth month, MyMonthDay monthDay) {
-        validateDate(month.getMonth(), monthDay.getMonthDay());
-        endDayOfMonth = findEndDayOfMonth(month.getMonth());
+    public MyDate(MyMonth month, int endDayOfMonth, int weekDayIndex) {
         this.month = month;
-        this.monthDay = monthDay;
+        this.endDayOfMonth = endDayOfMonth;
+        this.weekDayIndex = weekDayIndex;
     }
 
-    private void validateDate(int month, int monthDay) {
-
-        if (month == 2 || monthDay > 28) {
-            throw new IllegalArgumentException(Errors.DATE_NOT_VALID.getMessage());
-        }
-        tryMethodAndThrow(() -> MonthDay.of(month, monthDay), Errors.DATE_NOT_VALID.getMessage());
-    }
-
-    private MyMonthDay findEndDayOfMonth(int month) {
+    private int findEndDayOfMonth(int month) {
         if (month == 2) {
-            return new MyMonthDay(28);
+            return 28;
         }
         if (List.of(1, 3, 5, 7, 8, 10, 12).contains(month)) {
-            return new MyMonthDay(31);
+            return 31;
         }
-        return new MyMonthDay(30);
+        return 30;
     }
 
-    public List<DateDto> getWorkDates() {
-        return IntStream.rangeClosed(monthDay.getMonthDay(), endDayOfMonth.getMonthDay())
-                .mapToObj(day -> new DateDto(month.getMonth(), day))
-                .toList();
+    public List<WorkDateDto> getWorkDateCalender() {
+        return IntStream.rangeClosed(1, endDayOfMonth)
+                .mapToObj(day -> {
+                    WorkDateDto dto = new WorkDateDto(month.getMonth(), day, getNameOf(day), checkRestDay(weekDayIndex, day));
+                    weekDayIndex++;
+                    return dto;
+                }).toList();
     }
+
+    private boolean checkRestDay(int weekDayIndex, int day) {
+        return isWeekEnd(weekDayIndex) || isHoliday(month.getMonth(), day);
+    }
+
 }
 
