@@ -17,7 +17,7 @@ public class MyMonth {
 
     private void validateMyMonth(int month) {
         if (month < 1 || month > 12) {
-            throw new IllegalArgumentException(Errors.MONTH_NOT_VALID.getMessage());
+            throw new IllegalArgumentException(Errors.MONTH_OUT_OF_RANGE.getMessage());
         }
     }
 
