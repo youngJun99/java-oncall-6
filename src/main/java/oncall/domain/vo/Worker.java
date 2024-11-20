@@ -15,7 +15,7 @@ public class Worker {
 
     private void validateName(String inputName) {
         if (inputName.length() > 5) {
-            throw new IllegalArgumentException(Errors.NAME_RANGE_ERROR.getMessage());
+            throw new IllegalArgumentException(Errors.NAME_RANGE.getMessage());
         }
     }
 
