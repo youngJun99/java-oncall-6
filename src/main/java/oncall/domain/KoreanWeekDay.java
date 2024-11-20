@@ -22,20 +22,11 @@ public enum KoreanWeekDay {
     }
 
     public int getIndexOf(String input) {
-        validateWeekDay(input);
         return Arrays.stream(KoreanWeekDay.values())
                 .filter(weekday -> weekday.name.equals(input))
                 .mapToInt(weekday -> weekday.dayIndex)
                 .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException(Errors.SYSTEM_ERROR.getMessage()));
-    }
-
-    private void validateWeekDay(String input) {
-        boolean inValid = Arrays.stream(KoreanWeekDay.values())
-                .noneMatch(weekday -> weekday.name.equals(input));
-        if (inValid) {
-            throw new IllegalArgumentException(Errors.WEEK_DAY_NOT_VALID.getMessage());
-        }
+                .orElseThrow(() -> new IllegalArgumentException(Errors.WEEK_DAY_NOT_VALID.getMessage()));
     }
 
     public String getNameOf(int index) {
