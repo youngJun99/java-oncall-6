@@ -29,12 +29,20 @@ public enum KoreanWeekDay {
                 .orElseThrow(() -> new IllegalArgumentException(Errors.WEEK_DAY_NOT_VALID.getMessage()));
     }
 
-    public String getNameOf(int index) {
+    public String getNameOf(int day) {
+        int index = processDayToIndex(day);
         return Arrays.stream(KoreanWeekDay.values())
                 .filter(weekday -> weekday.dayIndex == index)
                 .map(weekday -> weekday.name)
                 .findFirst()
                 .orElseThrow(() -> new IllegalArgumentException(Errors.SYSTEM_ERROR.getMessage()));
+    }
+
+    private int processDayToIndex(int day) {
+        if (day % 7 == 0) {
+            return 7;
+        }
+        return day % 7;
     }
 
 }
