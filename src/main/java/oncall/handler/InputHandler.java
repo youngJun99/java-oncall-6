@@ -21,6 +21,7 @@ public class InputHandler {
         String dateInfo = inputView.getInputDate();
         inputValidator.validateDateInfo(dateInfo);
         Matcher matcher = inputValidator.getDateInfoPattern().matcher(dateInfo);
+        matcher.matches();
         int month = Integer.parseInt(matcher.group(1));
         String koreanWeekDay = matcher.group(2);
         return new StartDateDto(month, koreanWeekDay);
