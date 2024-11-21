@@ -39,10 +39,12 @@ public class InputHandler {
 
     private List<String> makeScheduleList(String schedule) {
         inputValidator.validateWorkSchedule(schedule);
-        Matcher matcher = inputValidator.getWorkSchedulePattern().matcher(schedule);
+
+        String[] workersArray = schedule.split(","); // 쉼표로 분리
+
         List<String> workers = new ArrayList<>();
-        while (matcher.find()) {
-            workers.add(matcher.group(1));
+        for (String worker : workersArray) {
+            workers.add(worker.trim());
         }
         return workers;
     }
