@@ -35,7 +35,7 @@ public class MyDate {
     public List<WorkDateDto> getWorkDateCalender() {
         return IntStream.rangeClosed(1, endDayOfMonth)
                 .mapToObj(day -> {
-                    WorkDateDto dto = new WorkDateDto(month.getMonth(), day, getNameOf(day), checkRestDay(weekDayIndex, day),isHoliday(month.getMonth(),day));
+                    WorkDateDto dto = new WorkDateDto(month.getMonth(), day, getNameOf(weekDayIndex), checkRestDay(weekDayIndex, day),isHoliday(month.getMonth(),day));
                     weekDayIndex++;
                     return dto;
                 }).toList();
