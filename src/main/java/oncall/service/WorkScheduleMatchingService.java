@@ -30,6 +30,7 @@ public class WorkScheduleMatchingService {
                             workDateDto.monthDay(),
                             workDateDto.koreanWeekDay(),
                             workDateDto.restDay(),
+                            workDateDto.holiday(),
                             getWorker(workDateDto.restDay()));
                 }).toList();
     }

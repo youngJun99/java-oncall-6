@@ -5,6 +5,7 @@ public record MatchedWorkDto(
         int monthDay,
         String koreanWeekDay,
         boolean restDay,
+        boolean holiday,
         String worker
 ) {
 }

@@ -13,14 +13,14 @@ public class OutputView {
             System.out.println(day.month() + "월 " +
                     day.monthDay() + "일 " +
                     day.koreanWeekDay() + " " +
-                    restDayFormat(day.restDay()) +
+                    restDayFormat(day.holiday()) +
                     day.worker()
             );
         });
     }
 
-    private String restDayFormat(boolean restDay) {
-        if (restDay) {
+    private String restDayFormat(boolean holiday) {
+        if (holiday) {
             return REST_DAY_STRING;
         }
         return "";
