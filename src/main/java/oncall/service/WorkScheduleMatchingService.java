@@ -22,6 +22,7 @@ public class WorkScheduleMatchingService {
     }
 
     public List<MatchedWorkDto> getMatchedWorkSchedule(List<WorkDateDto> workSchedule) {
+        InitializeSchedules();
         return workSchedule.stream()
                 .map(workDateDto -> {
                     return new MatchedWorkDto(workDateDto.month(),
