@@ -8,6 +8,7 @@ import oncall.handler.InputHandler;
 
 import java.util.List;
 
+import static oncall.utils.ErrorCatcher.retryHandler;
 import static org.mockito.ArgumentMatchers.isNull;
 
 public class WorkScheduleMatchingService {
@@ -22,7 +23,7 @@ public class WorkScheduleMatchingService {
     }
 
     public List<MatchedWorkDto> getMatchedWorkSchedule(List<WorkDateDto> workSchedule) {
-        InitializeSchedules();
+        retryHandler(this::InitializeSchedules);
         return workSchedule.stream()
                 .map(workDateDto -> {
                     return new MatchedWorkDto(workDateDto.month(),
