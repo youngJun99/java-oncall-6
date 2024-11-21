@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 
 public class InputValidatorImpl implements InputValidator {
 
-    private static final String DATE_INFO_REGEX = "^\\d+,[ㄱ-ㅎ가-힣]+$";
+    private static final String DATE_INFO_REGEX = "^(\\d+),([ㄱ-ㅎ가-힣]+)$";
     private static final String WORKER_SCHEDULE_REGEX = "^ㄱ-ㅎ가-힣(,ㄱ-ㅎ가-힣)*$";
 
 
