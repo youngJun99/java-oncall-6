@@ -37,7 +37,7 @@ public enum DayOfWeek {
 
     public static DayOfWeek of(String inputName) {
         return Arrays.stream(DayOfWeek.values())
-                .filter(dayOfWeek -> dayOfWeek.name().equals(inputName))
-                .findFirst().get();
+                .filter(dayOfWeek -> dayOfWeek.name.equals(inputName))
+                .findAny().get();
     }
 }
