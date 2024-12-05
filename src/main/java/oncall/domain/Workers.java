@@ -21,6 +21,12 @@ public class Workers {
                 .collect(Collectors.toCollection(LinkedList::new));
     }
 
+    public Worker getFirstWorker() {
+        Worker nextWorker = workers.removeFirst();
+        workers.add(nextWorker);
+        return nextWorker;
+    }
+
     public Worker getNextWorker(Worker previousWorker) {
         Worker nextWorker = workers.removeFirst();
         if (nextWorker.equals(previousWorker)) {
