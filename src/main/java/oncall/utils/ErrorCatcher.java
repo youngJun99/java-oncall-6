@@ -1,5 +1,7 @@
 package oncall.utils;
 
+import oncall.constants.Errors;
+
 import java.util.function.Supplier;
 
 public class ErrorCatcher {
