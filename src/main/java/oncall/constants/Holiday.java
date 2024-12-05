@@ -23,8 +23,8 @@ public enum Holiday {
     }
 
     public static boolean isHoliday(Date date) {
-        int inputMonth = date.getMonth;
-        int inputDay = date.getDay;
+        int inputMonth = date.getMonth();
+        int inputDay = date.getDay();
         return Arrays.stream(Holiday.values())
                 .anyMatch(holiday -> holiday.month == inputMonth && holiday.day == inputDay);
     }
