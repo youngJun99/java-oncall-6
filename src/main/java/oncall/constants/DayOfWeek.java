@@ -1,5 +1,8 @@
 package oncall.constants;
 
+import java.security.PublicKey;
+import java.util.Arrays;
+
 public enum DayOfWeek {
     월요일(true, "월"),
     화요일(true, "화"),
@@ -30,5 +33,11 @@ public enum DayOfWeek {
             return DayOfWeek.월요일;
         }
         return DayOfWeek.values()[dayOfWeek.ordinal() + 1];
+    }
+
+    public static DayOfWeek of(String inputName) {
+        return Arrays.stream(DayOfWeek.values())
+                .filter(dayOfWeek -> dayOfWeek.name().equals(inputName))
+                .findFirst().get();
     }
 }
