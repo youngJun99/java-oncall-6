@@ -21,6 +21,19 @@ public class Workers {
                 .collect(Collectors.toCollection(LinkedList::new));
     }
 
+    public Worker getNextWorker(Worker previousWorker) {
+        Worker nextWorker = workers.removeFirst();
+        if (nextWorker.equals(previousWorker)) {
+            Worker changedWorker = workers.removeFirst();
+            workers.addFirst(nextWorker);
+            workers.add(changedWorker);
+            return changedWorker;
+        }
+        workers.add(nextWorker);
+        return nextWorker;
+    }
+
+
     private void validateDuplicate(List<String> workers) {
         if (workers.size() != workers.stream().distinct().count()) {
             throw new IllegalArgumentException(Errors.DUPLICATE_WORKERS.getMessage());
