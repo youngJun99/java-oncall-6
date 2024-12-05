@@ -32,8 +32,8 @@ public class Date {
         return dayOfWeek.getName();
     }
 
-    public int getEndDateOfMonth() {
-        return endDateOfMonth;
+    public boolean isWorkDay() {
+        return dayOfWeek.isWorkDay();
     }
 
     public boolean hasNextDay() {
