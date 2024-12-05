@@ -42,16 +42,16 @@ public class WorkerCalenderService {
 
     private Worker getFirstWorker() {
         if (!date.isWorkDay() || isHoliday(date)) {
-            return weekdayWorkers.getFirstWorker();
+            return weekEndWorkers.getFirstWorker();
         }
-        return weekEndWorkers.getFirstWorker();
+        return weekdayWorkers.getFirstWorker();
     }
 
     private Worker getNextWorker(Worker previousWorker) {
         if (!date.isWorkDay() || isHoliday(date)) {
-            return weekdayWorkers.getNextWorker(previousWorker);
+            return weekEndWorkers.getNextWorker(previousWorker);
         }
-        return weekEndWorkers.getNextWorker(previousWorker);
+        return weekdayWorkers.getNextWorker(previousWorker);
     }
 
     private WorkSchedule generateWorkSchedule(Worker worker) {
