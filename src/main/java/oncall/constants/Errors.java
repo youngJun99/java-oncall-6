@@ -10,7 +10,7 @@ public enum Errors {
 
     //날짜 관련
     MONTH_RANGE("월은 1월 부터 12월 사이를 입력해야 합니다."),
-    DAY_RANGE("월에 존재할 수 없는 날입니다.");
+    DAY_OF_WEEK("요일의 입력 형식이 올바르지 않습니다..");
 
 
     private static final String PREFIX = "[ERROR] ";
