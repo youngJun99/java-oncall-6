@@ -37,6 +37,9 @@ public class WorkerCalenderService {
             workCalender.add(generateWorkSchedule(workedWorker));
         }
 
+        workedWorker = getNextWorker(workedWorker);
+        workCalender.add(generateWorkSchedule(workedWorker));
+
         return workCalender;
     }
 
