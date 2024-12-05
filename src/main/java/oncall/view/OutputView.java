@@ -6,7 +6,7 @@ import java.util.List;
 
 public class OutputView {
 
-    private static final String CALENDER_FORMAT = "%d월 %d일 %s %s %s";
+    private static final String CALENDER_FORMAT = "%d월 %d일 %s%s %s";
     private static final String NON_WEEKEND_HOLIDAY = "(휴일)";
 
     public void printWorkerCalender(List<WorkSchedule> calender) {
