@@ -35,7 +35,8 @@ public class Workers {
             workers.add(changedWorker);
             return changedWorker;
         }
-        return getFirstWorker();
+        workers.add(nextWorker);
+        return nextWorker;
     }
 
     private void validateLength(List<String> workers) {
