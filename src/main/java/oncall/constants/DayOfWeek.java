@@ -1,6 +1,7 @@
 package oncall.constants;
 
 import java.util.Arrays;
+import java.util.List;
 
 public enum DayOfWeek {
     월,
@@ -17,6 +18,10 @@ public enum DayOfWeek {
                 .filter(dayOfWeek -> dayOfWeek.name().equals(name))
                 .findAny()
                 .orElseThrow(() -> new IllegalArgumentException(Errors.NO_SUCH_DAY_OF_WEEK.getMessage()));
+    }
+
+    public static boolean isWeekEnd(DayOfWeek dayOfWeek){
+        return List.of(6,7).contains(dayOfWeek.ordinal());
     }
 
     public static boolean isInDayOfWeek(String name) {
