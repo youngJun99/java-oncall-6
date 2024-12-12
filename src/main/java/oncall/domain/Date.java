@@ -3,6 +3,7 @@ package oncall.domain;
 import oncall.constants.DayOfWeek;
 import oncall.constants.Errors;
 import oncall.constants.Holiday;
+import oncall.dto.WorkScheduleDto;
 
 import java.util.List;
 
@@ -23,6 +24,18 @@ public class Date {
         this.day = START_OF_MONTH;
         this.lastDayOfMonth = getLastDayOfMonth(month);
         this.dayOfWeek = dayOfWeek;
+    }
+
+    public int getMonth() {
+        return month;
+    }
+
+    public int getDay() {
+        return day;
+    }
+
+    public DayOfWeek getDayOfWeek() {
+        return dayOfWeek;
     }
 
     public boolean isRestDay() {
