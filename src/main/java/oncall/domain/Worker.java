@@ -11,6 +11,7 @@ public class Worker {
     private final String name;
 
     public Worker(String name) {
+        validateNameLength(name);
         this.name = name;
     }
 
