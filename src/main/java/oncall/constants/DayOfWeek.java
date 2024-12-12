@@ -25,15 +25,12 @@ public enum DayOfWeek {
     }
 
     public static DayOfWeek getNextDayOfWeek(DayOfWeek inputDayOfWeek) {
-
+            if(inputDayOfWeek.equals(일)) {
+                return 월;
+            }
+            return DayOfWeek.values()[inputDayOfWeek.ordinal() + 1];
     }
 
 }
 
-"""
-### 요일(DayOfWeek) - Enum
--[ ] 입력받은 한국어 요일 String에 대해서 Enum으로 돌려줄 수 있어야 한다.
-        -[ ] 다음 요일을 돌려줄 수 있어야 한다.
-        -[ ] String을 받았을 경우 Enum에 존재하는 것인지 반환해야 한다. ->Validator에서 쓰일 것.
-"""
 
