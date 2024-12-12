@@ -29,6 +29,10 @@ public class Date {
         return DayOfWeek.isWeekEnd(dayOfWeek) || Holiday.isHoliday(month,day);
     }
 
+    public boolean isNotWeekEndRestDay() {
+        return !DayOfWeek.isWeekEnd(dayOfWeek) && Holiday.isHoliday(month,day);
+    }
+
     public void toNextDay() {
         day++;
         this.dayOfWeek = DayOfWeek.getNextDayOfWeek(dayOfWeek);
