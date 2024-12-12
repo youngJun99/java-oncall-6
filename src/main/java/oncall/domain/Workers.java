@@ -23,17 +23,29 @@ public class Workers {
 
     public Worker getFirstWorker() {
         Worker worker = workers.poll();
+        workers.add(worker);
+        return worker;
     }
 
+    public Worker getNextWorker(Worker previousWorker) {
+        Worker nextWorker = workers.poll();
+        if (previousWorker.equals(nextWorker)) {
+            Worker changedWorker = workers.poll();
+            workers.addFirst(nextWorker);
+            workers.add(changedWorker);
+            return changedWorker;
+        }
+        return getFirstWorker();
+    }
 
     private void validateLength(List<String> workers) {
-        if(workers.size() < WORKERS_RANGE_LOWER_LIMIT || workers.size() > WORKERS_RANGE_UPPER_LIMIT){
-            throw new IllegalArgumentException(String.format(Errors.WORKERS_LENGTH.getMessage(),WORKERS_RANGE_LOWER_LIMIT,WORKERS_RANGE_UPPER_LIMIT));
+        if (workers.size() < WORKERS_RANGE_LOWER_LIMIT || workers.size() > WORKERS_RANGE_UPPER_LIMIT) {
+            throw new IllegalArgumentException(String.format(Errors.WORKERS_LENGTH.getMessage(), WORKERS_RANGE_LOWER_LIMIT, WORKERS_RANGE_UPPER_LIMIT));
         }
     }
 
     private void validateDuplicate(List<String> workers) {
-        if(workers.size() != workers.stream()
+        if (workers.size() != workers.stream()
                 .distinct()
                 .count()) {
             throw new IllegalArgumentException(Errors.DUPLICATE_WORKERS.getMessage());
@@ -43,5 +55,4 @@ public class Workers {
 
 
 
--[ ] 근무로직 추가 필요 !!
-        -[ ] 전의 근무자를 받는 경우와 안받는 경우를 따로 2개로 만들자.
+
