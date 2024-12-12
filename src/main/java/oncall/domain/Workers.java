@@ -17,7 +17,8 @@ public class Workers {
         validateLength(workers);
         validateDuplicate(workers);
         this.workers = workers.stream()
-                .map(Worker::new).collect(Collectors.toCollection(LinkedList::new));
+                .map(Worker::new)
+                .collect(Collectors.toCollection(LinkedList::new));
     }
 
     private void validateLength(List<String> workers) {
