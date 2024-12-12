@@ -5,8 +5,8 @@
 -[x] int 로 월과 숫자를 받았을 경우 holiday인지 판별할 수 있는 static 매서드가 필요할 것 같다. 
 
 ### 근무자 (Worker)
--[ ] 근무자는 String 이름 필드로 이루어져 있으며 getter를 열어두자.
--[ ] equals 오버라이딩을 하여 같음을 비교한다.
+-[x] 근무자는 String 이름 필드로 이루어져 있으며 getter를 열어두자. 최대 5자입니다.
+-[x] equals 오버라이딩을 하여 같음을 비교한다.
 
 ### 근무자들 (Workers)
 -[ ] List<Worker>
