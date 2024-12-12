@@ -21,7 +21,7 @@ public enum DayOfWeek {
     }
 
     public static boolean isWeekEnd(DayOfWeek dayOfWeek){
-        return List.of(6,7).contains(dayOfWeek.ordinal());
+        return List.of(5,6).contains(dayOfWeek.ordinal());
     }
 
     public static boolean isInDayOfWeek(String name) {
