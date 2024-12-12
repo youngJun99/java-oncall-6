@@ -12,6 +12,7 @@ public enum DayOfWeek {
     토,
     일;
 
+    private static final List<Integer> WeekEndIndex = List.of(5,6);
 
     public static DayOfWeek of(String name) {
         return Arrays.stream(DayOfWeek.values())
@@ -21,7 +22,7 @@ public enum DayOfWeek {
     }
 
     public static boolean isWeekEnd(DayOfWeek dayOfWeek){
-        return List.of(5,6).contains(dayOfWeek.ordinal());
+        return WeekEndIndex.contains(dayOfWeek.ordinal());
     }
 
     public static boolean isInDayOfWeek(String name) {
