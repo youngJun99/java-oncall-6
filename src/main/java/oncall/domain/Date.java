@@ -49,7 +49,7 @@ public class Date {
         if(month == 2) {
             return 28;
         }
-        if(List.of(4,5,9,11).contains(month)){
+        if(List.of(4,6,9,11).contains(month)){
             return 30;
         }
         return 31;

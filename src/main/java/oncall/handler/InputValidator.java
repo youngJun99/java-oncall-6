@@ -15,7 +15,7 @@ public class InputValidator {
     public void validateMonthAndDayInput(String input) {
         Pattern pattern = Pattern.compile(MONTH_AND_DAY_OF_WEEK_REGEX);
         Matcher matcher = pattern.matcher(input);
-        if (!matcher.matches() || DayOfWeek.isInDayOfWeek(matcher.group(2))) {
+        if (!matcher.matches() || !DayOfWeek.isInDayOfWeek(matcher.group(2))) {
             throw new IllegalArgumentException(Errors.NO_SUCH_DAY_OF_WEEK.getMessage());
         }
         if (!input.matches(MONTH_AND_DAY_OF_WEEK_REGEX)) {
