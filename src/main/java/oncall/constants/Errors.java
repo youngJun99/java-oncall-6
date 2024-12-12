@@ -11,7 +11,8 @@ public enum Errors {
     WORKERS_LENGTH("직원은 최소 %d명 최대 %d명 사이를 입력해야 합니다."),
 
     //날짜 관련 에러
-    NO_SUCH_DAY_OF_WEEK("존재하지 않는 요일입니다.");
+    NO_SUCH_DAY_OF_WEEK("존재하지 않는 요일입니다."),
+    MONTH_RANGE("월은 %d 부터 %d 사이로 입력해주세요.");
 
 
     private static final String PREFIX = "[ERROR] ";
