@@ -21,6 +21,11 @@ public class Workers {
                 .collect(Collectors.toCollection(LinkedList::new));
     }
 
+    public Worker getFirstWorker() {
+        Worker worker = workers.poll();
+    }
+
+
     private void validateLength(List<String> workers) {
         if(workers.size() < WORKERS_RANGE_LOWER_LIMIT || workers.size() > WORKERS_RANGE_UPPER_LIMIT){
             throw new IllegalArgumentException(String.format(Errors.WORKERS_LENGTH.getMessage(),WORKERS_RANGE_LOWER_LIMIT,WORKERS_RANGE_UPPER_LIMIT));
@@ -37,3 +42,6 @@ public class Workers {
 }
 
 
+
+-[ ] 근무로직 추가 필요 !!
+        -[ ] 전의 근무자를 받는 경우와 안받는 경우를 따로 2개로 만들자.
